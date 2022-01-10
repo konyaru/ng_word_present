@@ -1,0 +1,12 @@
+p {
+  display: none;
+  margin: 0%;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+}
+
+input[type="checkbox"]:checked+p {
+  display: inline-block;
+}
