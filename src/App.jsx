@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { Game } from './pages/Game.jsx'
-import { SettingNGword } from './pages/SettingNGword.jsx'
+import { SettingNGwords } from './pages/SettingNGwords.jsx'
 
 function App() {
-  const [NGword, setNGword] = useState('')
-  const handleNGwordChange = (event) => {
-    setNGword(event.target.value)
+  const [NGwords, setNGwords] = useState([])
+  const handleNGwordsChange = (event, index) => {
+    console.log('event', event.target.value)
+    console.log('index', index)
+    if(NGwords[index] === undefined) {
+      setNGwords([...NGwords, event.target.value])
+    } else {
+      NGwords[index] = event.target.value
+      setNGwords([...NGwords])
+    }
   }
   return (
     <Router>
       <Routes>
-        <Route exact path='/setting' element={<SettingNGword NGword={NGword} onChange={handleNGwordChange} />} />
-        <Route exact path='/game' element={<Game NGword={NGword} />} />
+        <Route exact path='/setting' element={<SettingNGwords onBlur={handleNGwordsChange} />} />
+        <Route exact path='/game' element={<Game NGwords={NGwords} />} />
       </Routes>
     </Router>
   )
