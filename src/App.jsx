@@ -5,7 +5,7 @@ import { SettingNGwords } from './pages/SettingNGwords.jsx'
 
 function App() {
   const [NGwords, setNGwords] = useState([])
-  const handleNGwordsChange = (event, index) => {
+  const handleNGwordsBlur = (event, index) => {
     console.log('event', event.target.value)
     console.log('index', index)
     if(NGwords[index] === undefined) {
@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path='/setting' element={<SettingNGwords onBlur={handleNGwordsChange} />} />
+        <Route exact path='/setting' element={<SettingNGwords onBlur={handleNGwordsBlur} />} />
         <Route exact path='/game' element={<Game NGwords={NGwords} />} />
       </Routes>
     </Router>
