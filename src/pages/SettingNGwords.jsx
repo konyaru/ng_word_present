@@ -20,9 +20,11 @@ export const SettingNGwords = ({ onBlur }) => {
   })
 
   return (
-    <form onSubmit={handleToGamePage}>
-      {NGwords}
-      <input type='submit' value='Submit' />
-    </form>
+    <div className='setting'>
+      <form onSubmit={handleToGamePage}>
+        {NGwords}
+        <input type='submit' value='Submit' />
+      </form>
+    </div>
   )
 }

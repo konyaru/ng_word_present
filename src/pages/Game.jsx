@@ -13,8 +13,10 @@ export const Game = ({ NGwords }) => {
   })
 
   return (
-    <div>
-      {displayNGwords}
+    <div className='game'>
+      <div>
+        {displayNGwords}
+      </div>
     </div>
   )
 }

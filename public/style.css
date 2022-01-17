@@ -1,0 +1,1 @@
+.game,.setting{align-items:center;display:flex;justify-content:center;margin-top:20%}p{display:none;margin:0}input[type=checkbox],input[type=checkbox]:checked+p{display:inline-block}
